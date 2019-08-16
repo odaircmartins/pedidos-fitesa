@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <base href="/pedidos-fitesa/">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Pedidos Fitesa</title>
+
+    <link rel="stylesheet" href="css/bulma.min.css"> 
+</head>
+
+<body>    
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    <span class="icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </span>
+                    Novo pedido
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container"> 
+            <label class="label">Dados do Pedido</label> 
+            <div class="box">
+                <div class="field">
+                    <label class="label">Cliente</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="cliente">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Condição de Pagamento</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="condicaoDePagamento">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Incoterm</label>
+                    <div class="control">
+                        <div class="select is-info is-medium" id="incoterm"></div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Informação de redespacho</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="redespacho">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Data desejada</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="date" id="data">                    
+                    </div>
+                </div>
+            </div>
+
+            <label class="label">Itens do Pedido</label> 
+            <div class="box">
+                <div class="field">
+                    <div id="listaDeItens"></div>
+                </div>
+                <div class="field">
+                    <div class="control centered">
+                        <a class="button is-info is-fullwidth is-medium" id="botaoNovoItem">Novo Item</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control centered">
+                    <a class="button is-primary is-fullwidth is-medium" id="botaoAnalisarDemanda">Analisar Demanda</a>
+                </div>
+            </div>
+
+            <div id="alertas"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p><strong>Fitesa</strong> Versão Demo</p>
+            <a class="button is-warging" id="add-button" style="display:none;">Add APP</a>
+            <a class="button is-warning" id="update-button" style="display:none;">Obter nova versão</a>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Datas disponíveis</p>
+                <button class="delete" id="botaoFecharModal" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Tecnologia</label>
+                    <div class="control">
+                        <div class="select is-info is-medium" id="tecnologia"></div>
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <label class="label">Cor</label>
+                    <div class="control">
+                        <div class="select is-info is-medium" id="cor"></div>
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <label class="label">Gramatura</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="gramatura" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <label class="label">Largura</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="largura" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <label class="label">Bobinas por pacote</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="bobinasPorPacote" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label">Metragem linear</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="metragemLinear" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    </div>
+                </div>
+    
+                <div class="field">
+                    <label class="label">Metros quadrados</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="metrosQuadrados" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Preço por quilo</label>
+                    <div class="control">
+                        <input class="input is-info is-medium" type="text" id="precoPorQuilo" onkeypress="return event.charCode >= 43 && event.charCode <= 57">
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-info" id="botaoSalvarItem">OK</button>                               
+                <button class="button" id="botaoCancelarModal">Cancelar</button>
+                <button class="button is-danger" id="botaoExcluirItem">Excluir</button> 
+            </footer>
+        </div>
+    </div>
+</body>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<!-- <script src="js/scripts.js"></script> -->
+<script src="js/firebase.js"></script>
+<script src="js/main.js"></script>
+<link rel="manifest" href="manifest.json" />
+
+</html>
