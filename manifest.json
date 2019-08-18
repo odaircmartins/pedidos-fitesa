@@ -2,7 +2,7 @@
     "name": "Pedidos Fitesa",
     "short_name": "Pedidos Fitesa",
     "description": "Teste de APP de pedidos",
-    "background_color": "#71b9fc",
+    "background_color": "#FFFFFF",
     "display": "standalone",
     "icons": [
         {

@@ -123,6 +123,7 @@ function alterarItem(e){
     bobinasPorPacote.value = pedido.itensDoPedido[index].bobinasPorPacote;
     metragemLinear.value = pedido.itensDoPedido[index].metragemLinear;
     metrosQuadrados.value = pedido.itensDoPedido[index].metrosQuadrados;
+    precoPorQuilo.value = pedido.itensDoPedido[index].precoPorQuilo;
 
     botaoSalvarItem.value = index;
     botaoSalvarItem.classList.remove('is-info');
