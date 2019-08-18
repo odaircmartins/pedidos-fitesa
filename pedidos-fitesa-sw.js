@@ -8,8 +8,6 @@ let filesToCache = [
     'js/main.js'
 ];
 
-console.log("passei pelo SW");
-
 self.addEventListener('install',function(e){
     console.log('[ServiceWorker] Installer');
     e.waitUntil(
