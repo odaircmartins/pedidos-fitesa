@@ -490,7 +490,6 @@ let refreshing;
 
 window.addEventListener('appinstalled', (e) => {
     console.log("APP pode ser instalado");
-    app.logEvent('a2hs', 'installed');
 });
 
 let deferredPrompt;
