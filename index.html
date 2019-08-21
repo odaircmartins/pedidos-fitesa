@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <base href="/pedidos-fitesa/">
+    <!-- <base href="/pedidos-fitesa/"> -->
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -122,42 +122,42 @@
                 <div class="field">
                     <label class="label">Gramatura</label>
                     <div class="control">
-                        <input class="input is-info is-medium" type="text" id="gramatura" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input class="input is-info is-medium" type="text" id="gramatura" pattern="[0-9]*">
                     </div>
                 </div>
     
                 <div class="field">
                     <label class="label">Largura</label>
                     <div class="control">
-                        <input class="input is-info is-medium" type="text" id="largura" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input class="input is-info is-medium" type="text" id="largura" pattern="[0-9]*">
                     </div>
                 </div>
     
                 <div class="field">
                     <label class="label">Bobinas por pacote</label>
                     <div class="control">
-                        <input class="input is-info is-medium" type="text" id="bobinasPorPacote" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input class="input is-info is-medium" type="text" id="bobinasPorPacote" pattern="[0-9]*">
                     </div>
                 </div>
                 
                 <div class="field">
                     <label class="label">Metragem linear</label>
                     <div class="control">
-                        <input class="input is-info is-medium" type="text" id="metragemLinear" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input class="input is-info is-medium" type="text" id="metragemLinear" pattern="[0-9]*">
                     </div>
                 </div>
     
                 <div class="field">
                     <label class="label">Metros quadrados</label>
                     <div class="control">
-                        <input class="input is-info is-medium" type="text" id="metrosQuadrados" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <input class="input is-info is-medium" type="text" id="metrosQuadrados" pattern="[0-9]*">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Preço por quilo</label>
                     <div class="control">
-                        <input class="input is-info is-medium" type="text" id="precoPorQuilo" onkeypress="return event.charCode >= 43 && event.charCode <= 57">
+                        <input class="input is-info is-medium" type="text" id="precoPorQuilo" pattern="[0-9]*">
                     </div>
                 </div>
             </section>

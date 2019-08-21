@@ -116,8 +116,8 @@ function fecharModal(){
 // Abre o modal para alterar item
 function alterarItem(e){
     let index = parseInt(e.target.name);    
-    tecnologia.value = pedido.itensDoPedido[index].tecnologia;
-    cor.value = pedido.itensDoPedido[index].cor;
+    listaTecnologias.value = pedido.itensDoPedido[index].tecnologia;
+    listaCores.value = pedido.itensDoPedido[index].cor;
     gramatura.value = pedido.itensDoPedido[index].gramatura;
     largura.value = pedido.itensDoPedido[index].largura;
     bobinasPorPacote.value = pedido.itensDoPedido[index].bobinasPorPacote;
@@ -201,8 +201,7 @@ function salvarItem(){
         divControlCentered.append(buttonItem);
         divField.append(divControlCentered);
     
-        listaDeItens.append(divField);
-        limparCamposItensDoPedido();
+        listaDeItens.append(divField);        
     } else {
         let index = botaoSalvarItem.value;
         let itemNumero = parseInt(index) + 1;
@@ -223,6 +222,7 @@ function salvarItem(){
         listaDeItens.childNodes[index].childNodes[0].childNodes[0].innerText = itemNumero + " - " + item.tecnologia + " " + item.cor + " " + item.gramatura + " gr Largura " + item.largura + " mm";
     }
    
+    limparCamposItensDoPedido();
     modal.classList.remove('is-active');
 }
 
