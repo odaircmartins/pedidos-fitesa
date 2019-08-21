@@ -1,4 +1,4 @@
-let cacheName = "Pedidos Fitesa 1.0";
+let cacheName = "Pedidos Fitesa 2.0";
 let filesToCache = [
     './',
     'index.html',
@@ -7,6 +7,8 @@ let filesToCache = [
     'js/firebase.js',
     'js/main.js'
 ];
+
+console.log("Rodando aplicação " + cacheName);
 
 self.addEventListener('install',function(e){
     console.log('[ServiceWorker] Installer');
