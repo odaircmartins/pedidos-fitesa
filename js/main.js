@@ -13,6 +13,7 @@ const cliente = document.querySelector('#cliente');
 const condicaoDePagamento = document.querySelector('#condicaoDePagamento');
 const incoterm = document.querySelector('#incoterm');
 const redespacho = document.querySelector('#redespacho');
+const pedidoDoCliente = document.querySelector('#pedidoDoCliente');
 const data = document.querySelector('#data');
 const botaoAnalisarDemanda = document.querySelector('#botaoAnalisarDemanda');
 const alertas = document.querySelector('#alertas');
@@ -319,6 +320,7 @@ function preencheColecaoPedido(){
     pedido.condicaoDePagamento = condicaoDePagamento.value;
     pedido.incoterm = listaIncoterms.options[listaIncoterms.selectedIndex].value;
     pedido.redespacho = redespacho.value;
+    pedido.pedidoDoCliente = pedidoDoCliente.value;
     pedido.data = data.value;
 }
 
@@ -417,6 +419,7 @@ function limparCamposCabecalhoDoPedido(){
     condicaoDePagamento.value = '';
     listaIncoterms.selectedIndex = 0;
     redespacho.value = '';
+    pedidoDoCliente.value = '';
     data.value = '';
     listaDeItens.innerHTML = '';
 
