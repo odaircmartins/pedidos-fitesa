@@ -454,20 +454,23 @@ if ("serviceWorker" in navigator) {
     .then(function(registration) {
       registration.addEventListener("updatefound", () => { // [B]
         // Uma atualização no Service Worker foi encontrada, instalando...
+        console.log("1 - Uma atualização no Service Worker foi encontrada, instalando...");
         newWorker = registration.installing; // [C]
 
         newWorker.addEventListener("statechange", () => {
           // O estado do Service Worker mudou?
+          console.log("2 - O estado do Service Worker mudou?");
           switch (newWorker.state) {
             case "installed": {
               // Existe um novo Service Worker disponível, mostra a notificação
+              console.log("3 - Existe um novo Service Worker disponível, mostra a notificação");
               if (navigator.serviceWorker.controller) {
-                document.getElementById('update-button').style.display = "block"
+                document.getElementById('update-button').style.display = "block";
                 // O evento de clique na notificação
                 document.getElementById("update-button").addEventListener("click", function() {
-                    newWorker.postMessage({ action: "skipWaiting" })
+                    newWorker.postMessage({ action: "skipWaiting" });
                 })  
-                break
+                break;
               }
             }
           }
@@ -475,14 +478,11 @@ if ("serviceWorker" in navigator) {
       });
 
       // SUCESSO - ServiceWorker Registrado
-      console.log(
-        "ServiceWorker registrado com sucesso no escopo: ",
-        registration.scope
-      );
+      console.log("4 - ServiceWorker registrado com sucesso no escopo: ", registration.scope);
     })
     .catch(function(err) {
       // ERRO - Falha ao registrar o ServiceWorker
-      console.log("Falha ao registrar o ServiceWorker: ", err);
+      console.log("5 - Falha ao registrar o ServiceWorker: ", err);
     })
 }
 
