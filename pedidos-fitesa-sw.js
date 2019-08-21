@@ -1,4 +1,4 @@
-let cacheName = "Pedidos Fitesa 4.0";
+let cacheName = "Pedidos Fitesa 5.0";
 let filesToCache = [
     './',
     'index.html',
